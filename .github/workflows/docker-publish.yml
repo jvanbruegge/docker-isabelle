@@ -73,8 +73,10 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: |
+            ghcr.io/jvanbruegge/docker-isabelle:2025-RC2
+          labels: |
+            2025-RC2
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
